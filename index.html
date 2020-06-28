@@ -13,15 +13,20 @@
   <div class="container">
     <p>Converter for myanglish to zawgyi.</p>
 
-    <textarea type="text" id="input"></textarea>
-    <textarea type="text" id="output" read-only></textarea>
+    <textarea type="text" id="input" placeholder="Myanglish လို ရိုက်ထည့်ပါ"></textarea>
+    <br />
+    <button id="submit">ဘာသာပြန်</button>
+    <br />
+    <textarea type="text" id="output" placeholder="မြန်မာလို.." read-only></textarea>
 
   </div>
   
   <script>
-  const el  = new Object;
-  el.input  = document.getElementById('input');
-  el.output = document.getElementById('output');
+  const el  = window.el = {
+    input: document.getElementById('input'),
+    output: document.getElementById('output'),
+    button: document.getElementById('submit')
+  };
   </script>
 
   <script src="./data.js"></script>
