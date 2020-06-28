@@ -1,4 +1,5 @@
-var data = [{"id":"1","mm":"ကံ","en":"Kan"},
+const data = window.data = [
+{"id":"1","mm":"ကံ","en":"Kan"},
 {"id":"2","mm":"ခ်စ္","en":"Chit"},
 {"id":"3","mm":"ငါ","en":"Ngar"},
 {"id":"4","mm":"ငို","en":"Ngo"},
@@ -1362,4 +1363,4 @@ var data = [{"id":"1","mm":"ကံ","en":"Kan"},
 {"id":"1362","mm":"ႏွဳန္း","en":"Hnone"},
 {"id":"1363","mm":"ႏႈတ္","en":"Hnote"},
 {"id":"1364","mm":"ႏႈိင္း","en":"Hnine"},
-]
+];
