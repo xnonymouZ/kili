@@ -3,3 +3,4 @@ name: Ethereal - Myanglish
 exclude:
     - LICENSE
     - CNAME
+    - README.md
