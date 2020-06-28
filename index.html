@@ -4,17 +4,28 @@
 <head>
   <meta name="viewport" content="width=device-width; initial-scale=1.0">
   <meta charset="UTF-8">
+  <title>{{ site.name }}</title>
+  <link rel="stylesheet" href="https://etherio.github.io/cdn/normalize/normalize.css" />
+  <link rel="stylesheet" href="https://etherio.github.io/cdn/milligram/milligram.css" />
 </head>
 
 <body>
-<p>Converter for myanglish to zawgyi.</p>
+  <div class="container">
+    <p>Converter for myanglish to zawgyi.</p>
 
-  <textarea type="text" id="cValue" onKeyUp="converter(event)">
-  </textarea>
-  <p id="demo"></p>
+    <textarea type="text" id="input"></textarea>
+    <textarea type="text" id="output" read-only></textarea>
 
-  <script type="text/javascript" src="./data.js"></script>
-  <script type="text/javascript" src="./app.js"></script>
+  </div>
+  
+  <script>
+  const el  = new Object;
+  el.input  = document.getElementById('input');
+  el.output = document.getElementById('output');
+  </script>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
 
 </body>
 </html>
