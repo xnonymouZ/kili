@@ -1,45 +1,41 @@
-const app = window.app = new Object({
-    events: {
-        keypress(event) {
-            let e = (event || window.event);
-            let k = e.key.trim();
-            if (k) {
-                return;
-            }
-            return alert(k);
-        },
-        get input() {
-            return (el || window.el).input;
-        },
-        get output() {
-            return (el || window.el).output;
-        }
+const CHAR_WHITESPACE = " ";
+
+const app = {
+    output: "",
+
+    convert() {
+       this.ouput = "";
+       el.input.setAttribute("disabled", true);
+       el.button.setAttribute("disabled", true);
+
+       let myanglish = el.input.value;
+       let words = myanglish.split(CHAR_WHITESPACE);
+       words.forEach(word => this.translate(word));
+       el.output.value = this.output;
+       el.input.removeAttribute("disabled");
+       el.button.removeAttribute("disabled");
     },
-    get event() {
-        return this.events;
+
+    translate(word) {
+       if (word.trim()) {
+           word = this.find(word);
+       }
+       this.output += word;
+    },
+
+    find(word) {
+        let matched = (data || window.data)
+            .filter(({ en }) => en === word);
+        return matched.length ? match[0].mm : word;
     }
-});
-
-;(function(w) {
-  if (! "el" in w) {
-    document.write("<li class=\"alert danger\">Input/Output Elements not found</li>");
-  }
-
-  el.input.addEventListener('keypress', app.event.keypress);
-})(window);
-
-if(key > =65 && key <= 122){
-  var cValue = document.getElementById("cValue");
-  var filtered = data.filter(function(item){
-    return item.en === cValue.value
-  });
-  if(filtered.length > 0) {
-  document.getElementById("demo").innerHTML = "The MM  value is: " + filtered[0].mm;
-  }
+};
 
 windiw.addEventListener('load', () => {
-    let input = document.querySelector('textarea')
-    input.addEventListener('keyup', converter)
-})
+    try {
+        el.button.addEventListener('click', app.convert);
+    } catch (error) {
+        alert(error.message);
+    }
+});
 
 
