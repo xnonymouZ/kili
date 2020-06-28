@@ -1,0 +1,5 @@
+name: Ethereal - Myanglish
+
+exclude:
+    - LICENSE
+    - CNAME
